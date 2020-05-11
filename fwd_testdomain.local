@@ -1,0 +1,33 @@
+
+$TTL 3H
+@       IN SOA @ primary-dns.testdomain.local. (
+                                        0       ; serial
+                                        1D      ; refresh
+                                        1H      ; retry
+                                        1W      ; expire
+                                        3H )    ; minimum
+; Name Server Info
+; This returns the Name server for the domain
+; To test: host -t NS testdomain.local
+;================================
+@               IN      NS      primary-dns;
+
+
+; Mail Servers
+; This returns the Mail Exchanger for testdomain.local.
+; To test: host -t MX testdomain.local
+; ===============================
+@               IN      MX      10      mail;
+
+
+
+; The “@” is an alias for the zone name itself.
+; It is what gets returned for this. “Ex: host testdomain.local”
+@               IN      A       192.168.1.20; 
+
+; Standard Address IP Records
+;================================
+primary-dns     IN      A       192.168.1.20;
+mail            IN      A       192.168.1.20;
+kali            IN      A       192.168.1.10;
+www             IN      A       192.168.1.20;

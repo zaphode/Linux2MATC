@@ -1,0 +1,17 @@
+$TTL 3600
+@       IN SOA  @ primary-dns.testdomain.local. (
+                                        0       ; serial
+                                        14400   ; refresh
+                                        3000    ; retry
+                                        14400   ; expire
+                                        3600 )  ; minimum
+; Name Server Info
+;================================
+@               IN      NS      primary-dns.testdomain.local.;
+
+
+; PTR Records
+;================================
+10              IN      PTR     kali.testdomain.local.;
+20              IN      PTR     primary-dns.testdomain.local.;
+20              IN      PTR     mail.testdomain.local.;
